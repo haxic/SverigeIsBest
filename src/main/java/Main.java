@@ -1,12 +1,11 @@
-import de.javasoft.plaf.synthetica.SyntheticaBlackStarLookAndFeel;
-import de.javasoft.plaf.synthetica.SyntheticaPlainLookAndFeel;
-import de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel;
-import de.javasoft.swing.JYButton;
-import de.javasoft.swing.JYSwitchButton;
-import org.jdesktop.swingx.JXButton;
-
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
+import javax.swing.WindowConstants;
+import java.awt.Checkbox;
+import java.awt.FlowLayout;
 
 public class Main {
 
@@ -14,28 +13,12 @@ public class Main {
     public static void main(String[] args) {
 
 
-        JXButton jxButton = new JXButton("HEJSA");
+        JButton jxButton = new JButton("HEJSA");
 
 
 
         UIManager.put("Synthetica.window.decoration", Boolean.FALSE);
-//        try {
-//            UIManager.setLookAndFeel(new SyntheticaStandardLookAndFeel());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
 
-//        try {
-//            UIManager.setLookAndFeel(new SyntheticaBlackStarLookAndFeel());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-        try {
-            UIManager.setLookAndFeel(new SyntheticaPlainLookAndFeel());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 
         JFrame frame = new JFrame("JFrame Example");
@@ -45,7 +28,7 @@ public class Main {
 
         JLabel label = new JLabel("This is a label!");
 
-        JYButton test = new JYButton("Test JYButton");
+        JButton test = new JButton("Test JYButton");
 
         JButton button = new JButton();
         button.setText("Press me");
@@ -56,18 +39,8 @@ public class Main {
         panel.add(jxButton);
 
 
-        JComboBox<String> stringJComboBox = new JComboBox<>(new String[]{"test1", "test2"});
-
-        panel.add(stringJComboBox);
-
         panel.add(new Checkbox());
 
-
-        JYSwitchButton switchButton2 = new JYSwitchButton("JYSwitchButton deselected", false);
-        switchButton2.setOnText("On");
-        switchButton2.setOffText("Off");
-//        switchButton2.setTextGap(12);
-        panel.add(switchButton2);
 
         frame.add(panel);
         frame.setSize(300, 300);
